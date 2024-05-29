@@ -1,0 +1,33 @@
+years = [2025, 2030, 2040, 2045, 2050]
+
+opec_2023 = [103, 107, 112, 115, None]
+opec_2022 = [102, 106, 110, 110, None]
+opec_2021 = [101, 105, 108, 105, None]
+opec_2020 = [100, 103, 106, 104, None]
+opec_2019 = [100, 104, 106, 103, None]
+
+iea_steps = [101, 102, 100, None, 100]
+iea_aps = [101, 102, 90, None, 75]
+iea_nze = [99, 97, 60, None, 25]
+
+plt.figure(figsize=(10, 6))
+
+# Plotting OPEC data
+plt.plot(years[:-1], opec_2023[:-1], label='OPEC 2023', color='black', marker='o')
+plt.plot(years[:-1], opec_2022[:-1], label='OPEC 2022', color='red', marker='o')
+plt.plot(years[:-1], opec_2021[:-1], label='OPEC 2021', color='grey', marker='o')
+plt.plot(years[:-1], opec_2020[:-1], label='OPEC 2020', color='gold', marker='o')
+plt.plot(years[:-1], opec_2019[:-1], label='OPEC 2019', color='darkred', marker='o')
+
+# Plotting IEA data
+plt.plot(years, iea_steps, label='IEA STEPS', color='blue', marker='s')
+plt.plot(years, iea_aps, label='IEA APS', color='purple', marker='s')
+plt.plot(years, iea_nze, label='IEA NZE', color='green', marker='s')
+
+plt.xlabel('Year')
+plt.ylabel('Global Oil Demand (mb/d)')
+plt.title('Combined Global Oil Demand Outlook: OPEC vs IEA')
+plt.legend()
+plt.grid(True)
+
+plt.show()
